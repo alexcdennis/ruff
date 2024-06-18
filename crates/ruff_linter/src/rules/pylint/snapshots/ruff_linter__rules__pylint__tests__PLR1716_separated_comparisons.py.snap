@@ -1,0 +1,332 @@
+---
+source: crates/ruff_linter/src/rules/pylint/mod.rs
+---
+separated_comparisons.py:30:1: PLR1716 Simplify comparisons with chaining
+   |
+28 | # triggers the lint
+29 | # numbers
+30 | a < b and b < c
+   | ^^^^^^^^^^^^^^^ PLR1716
+31 | b < c and b > a
+32 | a < 10 and a > 1
+   |
+
+separated_comparisons.py:31:1: PLR1716 Simplify comparisons with chaining
+   |
+29 | # numbers
+30 | a < b and b < c
+31 | b < c and b > a
+   | ^^^^^^^^^^^^^^^ PLR1716
+32 | a < 10 and a > 1
+33 | a > 1 and a < 10
+   |
+
+separated_comparisons.py:32:1: PLR1716 Simplify comparisons with chaining
+   |
+30 | a < b and b < c
+31 | b < c and b > a
+32 | a < 10 and a > 1
+   | ^^^^^^^^^^^^^^^^ PLR1716
+33 | a > 1 and a < 10
+34 | a > 1 and a <= 10
+   |
+
+separated_comparisons.py:33:1: PLR1716 Simplify comparisons with chaining
+   |
+31 | b < c and b > a
+32 | a < 10 and a > 1
+33 | a > 1 and a < 10
+   | ^^^^^^^^^^^^^^^^ PLR1716
+34 | a > 1 and a <= 10
+35 | a > 1 and a < 10 and b == 2
+   |
+
+separated_comparisons.py:34:1: PLR1716 Simplify comparisons with chaining
+   |
+32 | a < 10 and a > 1
+33 | a > 1 and a < 10
+34 | a > 1 and a <= 10
+   | ^^^^^^^^^^^^^^^^^ PLR1716
+35 | a > 1 and a < 10 and b == 2
+36 | a > 1 and c == b and a < 10
+   |
+
+separated_comparisons.py:35:1: PLR1716 Simplify comparisons with chaining
+   |
+33 | a > 1 and a < 10
+34 | a > 1 and a <= 10
+35 | a > 1 and a < 10 and b == 2
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^ PLR1716
+36 | a > 1 and c == b and a < 10
+37 | a > 100 and c == b and a < 10
+   |
+
+separated_comparisons.py:36:1: PLR1716 Simplify comparisons with chaining
+   |
+34 | a > 1 and a <= 10
+35 | a > 1 and a < 10 and b == 2
+36 | a > 1 and c == b and a < 10
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^ PLR1716
+37 | a > 100 and c == b and a < 10
+38 | a < b and b < c
+   |
+
+separated_comparisons.py:37:1: PLR1716 Simplify comparisons with chaining
+   |
+35 | a > 1 and a < 10 and b == 2
+36 | a > 1 and c == b and a < 10
+37 | a > 100 and c == b and a < 10
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ PLR1716
+38 | a < b and b < c
+39 | a > b and b > c
+   |
+
+separated_comparisons.py:38:1: PLR1716 Simplify comparisons with chaining
+   |
+36 | a > 1 and c == b and a < 10
+37 | a > 100 and c == b and a < 10
+38 | a < b and b < c
+   | ^^^^^^^^^^^^^^^ PLR1716
+39 | a > b and b > c
+40 | a < b and a == 1 and b < c
+   |
+
+separated_comparisons.py:39:1: PLR1716 Simplify comparisons with chaining
+   |
+37 | a > 100 and c == b and a < 10
+38 | a < b and b < c
+39 | a > b and b > c
+   | ^^^^^^^^^^^^^^^ PLR1716
+40 | a < b and a == 1 and b < c
+41 | a < b and b < c and c == 786
+   |
+
+separated_comparisons.py:40:1: PLR1716 Simplify comparisons with chaining
+   |
+38 | a < b and b < c
+39 | a > b and b > c
+40 | a < b and a == 1 and b < c
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^ PLR1716
+41 | a < b and b < c and c == 786
+42 | a < b and b < 0 and c == 786
+   |
+
+separated_comparisons.py:41:1: PLR1716 Simplify comparisons with chaining
+   |
+39 | a > b and b > c
+40 | a < b and a == 1 and b < c
+41 | a < b and b < c and c == 786
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ PLR1716
+42 | a < b and b < 0 and c == 786
+43 | a < b and c == 786 and b < 0
+   |
+
+separated_comparisons.py:42:1: PLR1716 Simplify comparisons with chaining
+   |
+40 | a < b and a == 1 and b < c
+41 | a < b and b < c and c == 786
+42 | a < b and b < 0 and c == 786
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ PLR1716
+43 | a < b and c == 786 and b < 0
+44 | c == 786 and b < 0 and a < b
+   |
+
+separated_comparisons.py:43:1: PLR1716 Simplify comparisons with chaining
+   |
+41 | a < b and b < c and c == 786
+42 | a < b and b < 0 and c == 786
+43 | a < b and c == 786 and b < 0
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ PLR1716
+44 | c == 786 and b < 0 and a < b
+45 | a < b < c and c < d
+   |
+
+separated_comparisons.py:44:1: PLR1716 Simplify comparisons with chaining
+   |
+42 | a < b and b < 0 and c == 786
+43 | a < b and c == 786 and b < 0
+44 | c == 786 and b < 0 and a < b
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ PLR1716
+45 | a < b < c and c < d
+46 | b < c < d and a < b
+   |
+
+separated_comparisons.py:45:1: PLR1716 Simplify comparisons with chaining
+   |
+43 | a < b and c == 786 and b < 0
+44 | c == 786 and b < 0 and a < b
+45 | a < b < c and c < d
+   | ^^^^^^^^^^^^^^^^^^^ PLR1716
+46 | b < c < d and a < b
+47 | a < b < c and a < b and b < c
+   |
+
+separated_comparisons.py:46:1: PLR1716 Simplify comparisons with chaining
+   |
+44 | c == 786 and b < 0 and a < b
+45 | a < b < c and c < d
+46 | b < c < d and a < b
+   | ^^^^^^^^^^^^^^^^^^^ PLR1716
+47 | a < b < c and a < b and b < c
+48 | a < 10 and a > 1
+   |
+
+separated_comparisons.py:47:1: PLR1716 Simplify comparisons with chaining
+   |
+45 | a < b < c and c < d
+46 | b < c < d and a < b
+47 | a < b < c and a < b and b < c
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ PLR1716
+48 | a < 10 and a > 1
+49 | # strings
+   |
+
+separated_comparisons.py:48:1: PLR1716 Simplify comparisons with chaining
+   |
+46 | b < c < d and a < b
+47 | a < b < c and a < b and b < c
+48 | a < 10 and a > 1
+   | ^^^^^^^^^^^^^^^^ PLR1716
+49 | # strings
+50 | e < f and f < g
+   |
+
+separated_comparisons.py:50:1: PLR1716 Simplify comparisons with chaining
+   |
+48 | a < 10 and a > 1
+49 | # strings
+50 | e < f and f < g
+   | ^^^^^^^^^^^^^^^ PLR1716
+51 | e < 'k' and 'k' < g
+52 | e > 'kj' and e < 'kz'
+   |
+
+separated_comparisons.py:51:1: PLR1716 Simplify comparisons with chaining
+   |
+49 | # strings
+50 | e < f and f < g
+51 | e < 'k' and 'k' < g
+   | ^^^^^^^^^^^^^^^^^^^ PLR1716
+52 | e > 'kj' and e < 'kz'
+53 | # bytes
+   |
+
+separated_comparisons.py:52:1: PLR1716 Simplify comparisons with chaining
+   |
+50 | e < f and f < g
+51 | e < 'k' and 'k' < g
+52 | e > 'kj' and e < 'kz'
+   | ^^^^^^^^^^^^^^^^^^^^^ PLR1716
+53 | # bytes
+54 | h < i and i < j
+   |
+
+separated_comparisons.py:54:1: PLR1716 Simplify comparisons with chaining
+   |
+52 | e > 'kj' and e < 'kz'
+53 | # bytes
+54 | h < i and i < j
+   | ^^^^^^^^^^^^^^^ PLR1716
+55 | h < b'k' and b'k' < i
+56 | h > b'kj' and h < b'kz'
+   |
+
+separated_comparisons.py:55:1: PLR1716 Simplify comparisons with chaining
+   |
+53 | # bytes
+54 | h < i and i < j
+55 | h < b'k' and b'k' < i
+   | ^^^^^^^^^^^^^^^^^^^^^ PLR1716
+56 | h > b'kj' and h < b'kz'
+57 | # booleans
+   |
+
+separated_comparisons.py:56:1: PLR1716 Simplify comparisons with chaining
+   |
+54 | h < i and i < j
+55 | h < b'k' and b'k' < i
+56 | h > b'kj' and h < b'kz'
+   | ^^^^^^^^^^^^^^^^^^^^^^^ PLR1716
+57 | # booleans
+58 | k < l and l < m
+   |
+
+separated_comparisons.py:58:1: PLR1716 Simplify comparisons with chaining
+   |
+56 | h > b'kj' and h < b'kz'
+57 | # booleans
+58 | k < l and l < m
+   | ^^^^^^^^^^^^^^^ PLR1716
+59 | k < True and True < l
+60 | k > False and k < True
+   |
+
+separated_comparisons.py:59:1: PLR1716 Simplify comparisons with chaining
+   |
+57 | # booleans
+58 | k < l and l < m
+59 | k < True and True < l
+   | ^^^^^^^^^^^^^^^^^^^^^ PLR1716
+60 | k > False and k < True
+61 | # none type
+   |
+
+separated_comparisons.py:60:1: PLR1716 Simplify comparisons with chaining
+   |
+58 | k < l and l < m
+59 | k < True and True < l
+60 | k > False and k < True
+   | ^^^^^^^^^^^^^^^^^^^^^^ PLR1716
+61 | # none type
+62 | n < o and o < p
+   |
+
+separated_comparisons.py:62:1: PLR1716 Simplify comparisons with chaining
+   |
+60 | k > False and k < True
+61 | # none type
+62 | n < o and o < p
+   | ^^^^^^^^^^^^^^^ PLR1716
+63 | # todo: should None constants be included in the lint?
+64 | #   it is NOT included in the original pylint lint, but that
+   |
+
+separated_comparisons.py:66:1: PLR1716 Simplify comparisons with chaining
+   |
+64 | #   it is NOT included in the original pylint lint, but that
+65 | #   may not be intentional
+66 | n < None and None < o
+   | ^^^^^^^^^^^^^^^^^^^^^ PLR1716
+67 | # ellipsis type
+68 | q < r and r < s
+   |
+
+separated_comparisons.py:68:1: PLR1716 Simplify comparisons with chaining
+   |
+66 | n < None and None < o
+67 | # ellipsis type
+68 | q < r and r < s
+   | ^^^^^^^^^^^^^^^ PLR1716
+69 | q < ... and ... < r
+70 | # todo: should non-monotonic chains be included in the lint?
+   |
+
+separated_comparisons.py:69:1: PLR1716 Simplify comparisons with chaining
+   |
+67 | # ellipsis type
+68 | q < r and r < s
+69 | q < ... and ... < r
+   | ^^^^^^^^^^^^^^^^^^^ PLR1716
+70 | # todo: should non-monotonic chains be included in the lint?
+71 | #   it is included in the original pylint lint, but that may
+   |
+
+separated_comparisons.py:73:1: PLR1716 Simplify comparisons with chaining
+   |
+71 | #   it is included in the original pylint lint, but that may
+72 | #   not be intentional
+73 | a < b > c and b < d
+   | ^^^^^^^^^^^^^^^^^^^ PLR1716
+74 | 
+75 | # does not trigger the lint
+   |
